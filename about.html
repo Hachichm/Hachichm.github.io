@@ -156,6 +156,9 @@
 
         </form>
         <button onClick="loadText()" /> Load Text </button>
+        </br>
+        </br>
+        <button onClick="removeP()" /> Remove Paragraph</button>
         <script>
           function createPara() {
             var element = document.createElement("p");
@@ -172,6 +175,11 @@
             getId.innerHTML = "";
             getId.appendChild(textBox);
             document.body.appendChild(getId);
+          }
+
+          function removeP() {
+            var removeId = document.getElementById('p1');
+            removeId.parentNode.removeChild(removeId);
           }
         </script>
 
