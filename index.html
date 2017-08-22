@@ -20,6 +20,8 @@
     <!-- Custom styles for this template -->
     <link href="css/business-casual.css" rel="stylesheet">
 
+    
+
   </head>
 
   <body>
@@ -39,13 +41,13 @@
               </a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="about.html">About</a>
+              <a class="nav-link text-uppercase text-expanded" href="about.html">Intermediate</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="blog.html">Blog</a>
+              <a class="nav-link text-uppercase text-expanded" href="blog.html">Advanced</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="contact.html">Contact</a>
+              <a class="nav-link text-uppercase text-expanded" href="contact.html">Details</a>
             </li>
           </ul>
         </div>
@@ -60,7 +62,7 @@
         <!-- Welcome Message -->
         <div class="text-center mt-4">
           <div class="text-heading text-muted text-lg">Welcome To</div>
-          <h1 class="my-2">Mahmoud Hachich Git Page</h1>
+          <h1 class="my-2">My Git Page</h1>
           <div class="text-heading text-muted text-lg">By
             <strong>Mahmoud Hachich</strong>
           </div>
@@ -69,27 +71,176 @@
 
       <div class="bg-faded p-4 my-4">
         <hr class="divider">
-        <h2 class="text-center text-lg text-uppercase my-0">Build a website
-          <strong>worth visitng</strong>
+        <h2 class="text-center text-lg text-uppercase my-0">Basic JavaScript
+          <strong>worth completing</strong>
         </h2>
         <hr class="divider">
-        <img class="img-fluid float-left mr-4 d-none d-lg-block" src="img/intro-pic.jpg" alt="">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam soluta dolore voluptatem, deleniti dignissimos excepturi veritatis cum hic sunt perferendis ipsum perspiciatis nam officiis sequi atque enim ut! Velit, consectetur.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam pariatur perspiciatis reprehenderit illo et vitae iste provident debitis quos corporis saepe deserunt ad, officia, minima natus molestias assumenda nisi velit?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit totam libero expedita magni est delectus pariatur aut, aperiam eveniet velit cum possimus, autem voluptas. Eum qui ut quasi voluptate blanditiis?</p>
+
+        <h3> Creating a script </h3>
+        <p> Create a HTML file that has the following JavaScript code nested. </p>
+        <script> document.write("Hello World!" + "</br>"); </script>
+      </br> 
+
+        <h3> Variables </h3>
+        <p> Output a variable in 3 different ways. (You told me to ignore the alert box).</p>
+        <script> var x = 5;
+           document.write(x);
+           console.log(x + "</br>");
+        </script>
+</br> </br>
+          <h3> Functions one </h3>
+          <p>Create a function that accepets a number and returns its square (in this case its 5)</p>
+          <script> function squareFunction(num1){
+            return num1 * num1;
+          }
+              document.write(squareFunction(5)); 
+              </script>
+</br> </br>
+              <h3> Functions two </h3>
+              <p>Create a function that accepets 3 numbers and returns the sum (in this case its 1,2,3)</p>
+              <script> function addFunction(num1, num2 , num3){
+                    return num1 + num2 +num3
+                  }
+
+                  document.write(addFunction(1,2,3));
+                  </script>
+</br> </br>
+              <h3> Variable two </h3>
+              <p>Create a Person object with three attributes. name, age and occupation.</p>
+              <script> var Person = {
+		          	  name:"Mahmoud Hachich", 
+                  age:22, 
+                  occupation:"QA"
+                  };
+                  document.write(Person.name, " ", Person.age, " ", Person.occupation);
+                  </script>    
+</br> </br>
+                <h3> Events one </h3>
+                <p>Create a HTML buttom that calls a function when clicked</p>
+                <button onClick="myFunction()">Increase my age</button>
+                <script> function myFunction (){
+                            Person.age ++;
+                            alert(Person.age);			                                     
+                          }
+                    </script>   
+
+</br> </br>
+                  <h3> Function 3 / Events 2</h3>
+                  <p>Create a HTML buttom that calls a function when clicked</p>
+                  <form>
+                    name:<br>
+                    <input type="text" name="name" id ="nameBox" value = "">
+                    <br>
+                    age:<br>
+                    <input type="text" name="age" id ="age" value = "">
+                    <br>
+                    occupation:<br>
+                    <input type="text" name="occupation" id ="occ" value = ""><br>               
+                    <button onClick = "createPerson(nameBox.value, age.value, occ.value)" type = "submit" value ="Submit">Create person</button>  
+                    <button onClick = "checkAge(nameBox.value, age.value, occ.value)" type="submit" value="Submit">Check Age </button>               
+                   </form> 
+               
+                  <script>	function createPerson(name, age, occupation)
+
+                        {
+                          var Person = {Name: name, Age: age, Occupation: occupation}
+                            alert(Person.Name);
+                            alert(Person.Age);
+                            alert(Person.Occupation);
+                                                                            }		                                                                 
+                  </script>   
+  </br> </br>
+                  <h3> String 1</h3>
+                  <p>Converting String to uppercase </p>
+       <script>   var stg =  ' He said "my name is Elliot" ';
+                  document.write(stg); 
+                  document.write("</br>");
+                  var res = stg.toUpperCase();
+                  document.write("" + res);
+</script>
+
+</br> </br>
+                <h3> Strings 2 </h3>
+                <p>Concatenate a string and a number together </p>
+                <script> 
+
+                var str1 = "Hello ";
+                var num1 = 10;
+                var con = str1.concat(num1);
+                document.write(con);                   
+                </script>
+</br> </br>
+                <h3> Arrays 1/ Strings 3 </h3>
+                <p>Create and array with 2, add one, remove one </p>
+
+                <script> var strr = ["Mahmoud", " James", " Marcus"];
+                  document.write(strr);
+                  document.write("</br>");
+                  strr.push("Karim");
+                  document.write(strr);
+                  document.write("</br>");
+                  strr.splice(3);
+                  document.write(strr);</script>
+
+
+</br> </br>
+                  <h3> Conditionals one </h3>
+                  <p>Check if the person object is between 20-40 years old</p>
+                  
+                  <form>
+                    name:<br>
+                    <input type="text" name="name" id ="nameBox" value = "">
+                    <br>
+                    age:<br>
+                    <input type="text" name="age" id ="age" value = "">
+                    <br>
+                    occupation:<br>
+                    <input type="text" name="occupation" id ="occ" value = ""><br>               
+                    <button onClick = "createPerson(nameBox.value, age.value, occ.value)" type = "submit" value ="Submit">Create person</button>  
+                    <button onClick = "checkAge(nameBox.value, age.value, occ.value)" type="submit" value="Submit">Check Age </button>               
+                   </form>
+
+                  <script> function checkAge(name, age, occupation)
+                      {
+                        var Person = {Name: name, Age: age, Occupation: occupation}
+                        
+                        if ((Person.Age > 20) && (Person.Age < 40))
+                        {
+                        alert("True");
+                                }
+                              else
+                        alert("False"); }	 
+                      </script>
+</br> </br>
+
+                  <h3> Iteration once </h3>
+                  <p>Loop to count and check if it is divisiable by 2</p>
+                  <script> 
+                    for (i = 1; i <= 10; i++) {
+                      document.write(i + "\n");                                                            
+                    }
+                  </script>
+
+</br> </br>
+                  <h3> Iteration two </h3>
+                  <p>Loop to count and check if it is divisiable by 2</p>
+                  <script> 
+                    for (i = 1; i <= 10; i++) {
+				              //document.write(i + "\n");
+                      if (i%2 ==0)
+                      {
+                        document.write(i +" is dividable by " + (i/2) + "</br>");
+                      }
+                                          
+                    }
+                  </script>
+</br> </br>
+
+
+
       </div>
 
-      <div class="bg-faded p-4 my-4">
-        <hr class="divider">
-        <h2 class="text-center text-lg text-uppercase my-0">Beautiful boxes to
-          <strong>showcase your content</strong>
-        </h2>
-        <hr class="divider">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam soluta dolore voluptatem, deleniti dignissimos excepturi veritatis cum hic sunt perferendis ipsum perspiciatis nam officiis sequi atque enim ut! Velit, consectetur.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam pariatur perspiciatis reprehenderit illo et vitae iste provident debitis quos corporis saepe deserunt ad, officia, minima natus molestias assumenda nisi velit?</p>
-      </div>
-
-    </div>
+      
     <!-- /.container -->
 
     <footer class="bg-faded text-center py-5">
@@ -101,6 +252,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
   </body>
