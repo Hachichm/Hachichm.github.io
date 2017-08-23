@@ -85,14 +85,14 @@
         <h3> Itertation 3 - FizzBuzz </h3>
         <p> Create a FizzBuzz | View this on the console log :)</p>
         <script>
-          function fizzBuzz() {
-            for (var i = 1; i <= 100; i++) {
-              var fizz = i % 3 == 0,
-                buzz = i % 5 == 0;
-              console.log(fizz ? buzz ? "FizzBuzz </br>" : "Fizz </br>" : buzz ? "Buzz </br>" : i + "</br>");
-            }
-          }
-          fizzBuzz();
+          // function fizzBuzz() {
+          //   for (var i = 1; i <= 100; i++) {
+          //     var fizz = i % 3 == 0,
+          //       buzz = i % 5 == 0;
+          //     console.log(fizz ? buzz ? "FizzBuzz </br>" : "Fizz </br>" : buzz ? "Buzz </br>" : i + "</br>");
+          //   }
+          // }
+          // fizzBuzz();
         </script>
         </br>
         </br>
@@ -219,8 +219,39 @@
             var active = document.createElement("active");
             active.textContent = requestData["active"]
             document.getElementsByTagName("body")[0].appendChild(active);
+
+            $.getJSON('https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json', function (data) {
+              //var exg = JSON.stringify(data, null, 2);
+              //console.log(exg);
+
+              for (var arry in data) {
+                var element = document.getElementById("text");
+                var create = document.createElement("p");
+                create.appendChild(document.createTextNode(arry));
+                element.appendChild(create);
+                if (arry == "members") {
+                  for (let i = 0; i < data[arry].length; i++) {
+                    for (var mem in data.members[i]) {
+                      var element = document.getElementById("text");
+                      var create = document.createElement("p");
+                      create.appendChild(document.createTextNode(data.members[i][mem]));
+                      element.appendChild(create);
+                    }
+                  }
+                }
+                else { continue; }
+              }
+
+
+
+            });
+
+
+
           }
         </script>
+
+        <div id="text"> </div>
 
       </div>
       <!-- /.container -->
