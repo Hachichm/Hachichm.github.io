@@ -195,34 +195,8 @@
           request.send();
           request.onload = function () {
 
-            var requestData = request.response;
-            var myH1 = document.createElement("squadName");
-            myH1.textContent = requestData["squadName"];
-            document.getElementsByTagName("body")[0].appendChild(myH1);
-
-            var requestData = request.response;
-            var hmetwn = document.createElement("homeTown");
-            hmetwn.textContent = requestData["homeTown"]
-            document.getElementsByTagName("body")[0].appendChild(hmetwn);
-
-            var formed = request.respone;
-            var formed = document.createElement("formed");
-            formed.textContent = requestData["formed"]
-            document.getElementsByTagName("body")[0].appendChild(formed);
-
-            var base = request.respone;
-            var base1 = document.createElement("secretBase");
-            base1.textContent = requestData["secretBase"]
-            document.getElementsByTagName("body")[0].appendChild(base1);
-
-            var act = request.respone;
-            var active = document.createElement("active");
-            active.textContent = requestData["active"]
-            document.getElementsByTagName("body")[0].appendChild(active);
-
             $.getJSON('https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json', function (data) {
-              //var exg = JSON.stringify(data, null, 2);
-              //console.log(exg);
+
 
               for (var arry in data) {
                 var element = document.getElementById("text");
@@ -241,24 +215,37 @@
                 }
                 else { continue; }
               }
-
-
-
             });
+          }
+        </script>
+        <div id="text"> </div>
+        </br>
+        </br>
+
+        <h3>JSON two </h3>
+        <p>Accesing a JSON file</p>
+        <script>
+          var requestURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json';
+          var request = new XMLHttpRequest();
+          request.open("GET", requestURL);
+          request.responseType = "json"
+          request.send();
+          request.onload = function () {
 
 
-
+            $.getJSON('https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json', function (obj) {
+              console.log(JSON.stringify(obj, null, 2));
+            });
           }
         </script>
 
-        <div id="text"> </div>
 
       </div>
       <!-- /.container -->
 
       <footer class="bg-faded text-center py-5">
         <div class="container">
-          <p class="m-0">Copyright &copy; Your Website 2017</p>
+          <p class="m-0">Copyright &copy; Mahmoud Hachich </p>
         </div>
       </footer>
 
