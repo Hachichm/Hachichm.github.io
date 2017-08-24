@@ -225,35 +225,50 @@
         <h3>JSON two </h3>
         <p>Accesing a JSON file</p>
         <script>
-          var requestURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json';
-          var request = new XMLHttpRequest();
-          request.open("GET", requestURL);
-          request.responseType = "json"
-          request.send();
-          request.onload = function () {
+          function jsonTwo(searchInput) {
+            var requestURL = "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json";
+            var request = new XMLHttpRequest();
+            request.open("GET", requestURL);
+            request.responseType = "json"
+            request.send();
+            request.onload = function () {
 
+              $.getJSON("https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json", function (data) {
 
-            $.getJSON('https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json', function (obj) {
-              console.log(JSON.stringify(obj, null, 2));
-            });
+                data.forEach(function (input) {
+                  if (input.hse == searchInput) {
+                    var newP = document.getElementById("newJSON");
+                    var p = document.createElement("p");
+                    p.appendChild(document.createTextNode(JSON.stringify(input, null, 4)));
+                    newP.appendChild(p);
+                  }
+                  else if (input.hse)
+                });
+              });
+            }
           }
         </script>
+        <input type="text" name="searchInput" id="searchInput" value=""><br><br>
+        <button onClick="jsonTwo(searchInput.value)" type="submit" value="Submit">Find King</button>
 
 
-      </div>
-      <!-- /.container -->
+        <!-- /.container -->
 
-      <footer class="bg-faded text-center py-5">
-        <div class="container">
-          <p class="m-0">Copyright &copy; Mahmoud Hachich </p>
+        <div id="newJSON">
+
         </div>
-      </footer>
 
-      <!-- Bootstrap core JavaScript -->
-      <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/popper/popper.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <footer class="bg-faded text-center py-5">
+          <div class="container">
+            <p class="m-0">Copyright &copy; Mahmoud Hachich </p>
+          </div>
+        </footer>
 
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/popper/popper.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+      </div>
 </body>
 
 </html>
