@@ -114,16 +114,17 @@
         }
 
 
-        function calculateTotal() {
-          var total = 0;
-          while (garage.fault != 0) {
-            garage.forEach(function (call) {
-              var divElem = document.getElementById("Cars");
-              var p = document.createElement("p");
-              p.appendChild(document.createTextNode("Registration: " + call.reg + " " + "Car Make: " + call.make + " " + "Year: " + call.year + " " + "Number of fautls: " + call.fault));
-              divElem.appendChild(p);
-            });
+        function calculateTotal(billedCar) {
+          let total = 0;
+          for (let i = 0; i < garage.length; i++) {
+            if (garage[i].reg == billedCar) {
+
+              total = garage[i].fault * 100;
+              console.log(total);
+            }
+            console.log(calculateTotal());
           }
+
         }
       </script>
 
@@ -153,9 +154,11 @@
 
       <p id="Cars"> </p>
       <p> Calculate Cost of Faults </p>
+      <form>
+        <input type="text" name="reg" id="billedCar" placeholder="Registration"><br><br>
+      </form>
 
-
-      <button onClick="calculateTotal(fault.value)" type="submit " value="Submit ">Calculate Faults</button> </br>
+      <button onClick="calculateTotal(billedCar.value)" type="submit " value="Submit ">Calculate Faults</button> </br>
       <p id="Cost"> </p>
       </br>
     </div>
