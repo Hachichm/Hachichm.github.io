@@ -223,7 +223,7 @@
         </br>
 
         <h3>JSON two </h3>
-        <p>Accesing a JSON file</p>
+        <p>Search any king feature in the search box below</p>
         <script>
           function jsonTwo(searchInput) {
             var requestURL = "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json";
@@ -236,13 +236,31 @@
               $.getJSON("https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json", function (data) {
 
                 data.forEach(function (input) {
-                  if (input.hse == searchInput) {
-                    var newP = document.getElementById("newJSON");
+
+                  if (input.nm == searchInput) {
+                    var divElem = document.getElementById("newJSON");
                     var p = document.createElement("p");
                     p.appendChild(document.createTextNode(JSON.stringify(input, null, 4)));
-                    newP.appendChild(p);
+                    divElem.appendChild(p)
                   }
-                  else if (input.hse)
+                  else if (input.cty == searchInput) {
+                    var divElem = document.getElementById("newJSON");
+                    var p = document.createElement("p");
+                    p.appendChild(document.createTextNode(JSON.stringify(input, null, 4)));
+                    divElem.appendChild(p)
+                  }
+                  else if (input.hse == searchInput) {
+                    var divElem = document.getElementById("newJSON");
+                    var p = document.createElement("p");
+                    p.appendChild(document.createTextNode(JSON.stringify(input, null, 4)));
+                    divElem.appendChild(p);
+                  }
+                  else if (input.yrs == searchInput) {
+                    var divElem = document.getElementById("newJSON");
+                    var p = document.createElement("p");
+                    p.appendChild(document.createTextNode(JSON.stringify(input, null, 4)));
+                    divElem.appendChild(p)
+                  }
                 });
               });
             }
