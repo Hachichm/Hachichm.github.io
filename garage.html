@@ -82,25 +82,38 @@
       <h3>Virtual garage</h3>
       <p>Check in Car</p>
       <script>
-        var cars = [];
         var garage = [];
         function checkInCar(reg, make, year, fault) {
+          var car = [];
           var car = {
-            Reg: reg, Make: make, Year: year, Fault: fault
+            reg: reg, make: make, year: year, fault: fault
           }
-          cars.push(car);
-          garage.push(cars);
+          garage.push(car);
           console.log(garage);
-          alert("The " + car.Make + " car has been imported into your garage");
+          alert("The " + car.make + " car has been imported into your garage");
         }
 
         function checkOutCar(removeCar) {
-          cars.forEach(function (remove) {
-            if (remove.reg == removeCar) {
-              cars.splice(removeCar.value);
+          garage.forEach(function (remove, index) {
+            if (remove.reg === removeCar) {
+              garage.splice(index, 1);
             }
           }
           )
+          console.log(garage);
+        }
+
+        function displayCars() {
+
+          for (let i = 0; i < garage.length; i++) {
+            if (garage.length != 0) {
+              var divElem = document.getElementById("newJSON");
+              var p = document.createElement("p");
+              p.appendChild(document.createTextNode(garage.length));
+              divElem.appendChild(p)
+            }
+          }
+          displayCars();
         }
       </script>
 
@@ -117,10 +130,18 @@
       <p> Check out Car </p>
       <p> Enter car registration below that you would like to remove </p>
       <form>
-        <input type="text" name="reg" id="reg" placeholder="Registration"><br><br>
+        <input type="text" name="removeCar" id="removeCar" placeholder="Registration"><br><br>
       </form>
-      <button onClick="checkOutCar(removeCar.value) " type="submit " value="Submit ">Check out car</button> </br>
+      <button onClick="checkOutCar(getElementById('removeCar').value)" type="submit " value="Submit ">Check out car</button>      </br>
       </br>
+
+      <p> Display Cars </p>
+
+
+      <button onClick="displayCars()" type="submit " value="Submit ">Display Car</button> </br>
+      </br>
+
+      <p id="Cars"> </p>
     </div>
 
 
