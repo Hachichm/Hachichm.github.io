@@ -78,7 +78,7 @@
         <strong>Garage</strong>
       </h2>
       <hr class="divider">
-      <img class="img-fluid float-left mr-4 d-none d-lg-block" src="img/intro-pic.jpg" alt="">
+
       <h3>Virtual garage</h3>
       <p>Check in Car</p>
       <script>
@@ -89,7 +89,7 @@
             reg: reg, make: make, year: year, fault: fault
           }
           garage.push(car);
-          console.log(garage);
+          //console.log(garage);
           alert("The " + car.make + " car has been imported into your garage");
         }
 
@@ -100,20 +100,30 @@
             }
           }
           )
-          console.log(garage);
+          //console.log(garage);
         }
 
         function displayCars() {
 
-          for (let i = 0; i < garage.length; i++) {
-            if (garage.length != 0) {
-              var divElem = document.getElementById("newJSON");
+          garage.forEach(function (call) {
+            var divElem = document.getElementById("Cars");
+            var p = document.createElement("p");
+            p.appendChild(document.createTextNode("Registration: " + call.reg + " " + "Car Make: " + call.make + " " + "Year: " + call.year + " " + "Number of fautls: " + call.fault));
+            divElem.appendChild(p);
+          });
+        }
+
+
+        function calculateTotal() {
+          var total = 0;
+          while (garage.fault != 0) {
+            garage.forEach(function (call) {
+              var divElem = document.getElementById("Cars");
               var p = document.createElement("p");
-              p.appendChild(document.createTextNode(garage.length));
-              divElem.appendChild(p)
-            }
+              p.appendChild(document.createTextNode("Registration: " + call.reg + " " + "Car Make: " + call.make + " " + "Year: " + call.year + " " + "Number of fautls: " + call.fault));
+              divElem.appendChild(p);
+            });
           }
-          displayCars();
         }
       </script>
 
@@ -138,10 +148,16 @@
       <p> Display Cars </p>
 
 
-      <button onClick="displayCars()" type="submit " value="Submit ">Display Car</button> </br>
+      <button onClick="displayCars()" type="submit " value="Submit ">Display Cars</button> </br>
       </br>
 
       <p id="Cars"> </p>
+      <p> Calculate Cost of Faults </p>
+
+
+      <button onClick="calculateTotal(fault.value)" type="submit " value="Submit ">Calculate Faults</button> </br>
+      <p id="Cost"> </p>
+      </br>
     </div>
 
 
