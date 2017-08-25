@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>Hangman</title>
+
+
+</head>
+
+<body>
+    <h2> Enter word below</h2>
+    <form>
+        <input type="text" name="name" id="userInput"><br><br>
+    </form>
+    <button onClick="guessWord(getElementById('userInput').value)" type="submit " value="Submit ">Guess Letter</button> </br>
+    <p id="Cost"> </p>
+    </br>
+
+    <script>
+        let turns = 7;
+        let wongame = false;
+        let wordList = ["mahmoud", "john", "hello", "dog"];
+        let randomWord = Math.floor((Math.random() * wordList.length));
+        let chosenWord;
+        let dash = "";
+        for (let i = 0; i < wordList.length; i++) {
+            if (wordList[i] == wordList[randomWord]) {
+                chosenWord = wordList[i];
+            }
+        }
+
+        function replaceWord() {
+
+
+            for (let i = 0; i < chosenWord.length; i++) {
+
+                dash += "_";
+
+            }
+            console.log(dash)
+            document.write("The letter for you to guess this time is " + dash);
+
+        }
+
+        let manImages = new Array();
+
+
+        function guessWord(userInput) {
+
+            let b = document.getElementById("userInput").value;
+            console.log(b);
+            for (let i = 0; i < chosenWord.length; i++) {
+                if (b === chosenWord[i]) {
+                    dash = setCharAt(dash, i, b)
+                    console.log(dash);
+
+                }
+                else {
+
+                }
+
+            }
+        }
+        function setCharAt(str, index, chr) {
+            if (index > str.length - 1) return str;
+            return str.substr(0, index) + chr + str.substr(index + 1);
+        }
+
+        function updateImage(pic) {
+
+        }
+
+        guessWord();
+        replaceWord();
+        console.log(chosenWord)
+    </script>
+    <p id="letter">
+        <p>
+</body>
+
+</html>
