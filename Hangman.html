@@ -50,7 +50,6 @@
             console.log(b);
 
             while (turns != 7) {
-                turns++;
 
                 for (let i = 0; i < chosenWord.length; i++) {
                     if (b === chosenWord[i]) {
@@ -58,11 +57,15 @@
                         console.log(dash);
 
                     }
+                    else {
+                        turns++
+                        console.log("You Lost")
+                    }
+
+
                 }
 
             }
-            console.log()
-
         }
         function setCharAt(str, index, chr) {
             if (index > str.length - 1) return str;
