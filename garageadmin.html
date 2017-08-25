@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="">
+
+    <meta name="author" content="">
+
+
+
+    <title>Mahmoud Hachich Work</title>
+
+
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Custom fonts for this template -->
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic"
+        rel="stylesheet" type="text/css">
+
+
+
+    <!-- Custom styles for this template -->
+
+    <link href="css/business-casual.css" rel="stylesheet">
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+
+
+
+
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-faded py-lg-4">
+
+        <div class="container">
+
+            <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">JavaScript Booklet</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item active px-lg-4">
+
+                        <a class="nav-link text-uppercase text-expanded" href="index.html">Home
+
+<span class="sr-only">(current)</span>
+
+</a>
+
+                    </li>
+
+                    <li class="nav-item px-lg-4">
+
+                        <a class="nav-link text-uppercase text-expanded" href="about.html">Intermediate</a>
+
+                    </li>
+
+                    <li class="nav-item px-lg-4">
+
+                        <a class="nav-link text-uppercase text-expanded" href="garage.html">Garage</a>
+
+                    </li>
+
+                    <li class="nav-item px-lg-4">
+
+                        <a class="nav-link text-uppercase text-expanded" href="contact.html">Advanced</a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <div class="container">
+
+
+
+        <div class="bg-faded p-4 my-4">
+
+            <!-- Image Carousel -->
+
+
+
+            <!-- Welcome Message -->
+
+            <div class="text-center mt-4">
+
+                <div class="text-heading text-muted text-lg">Welcome To</div>
+
+                <h1 class="my-2">Mahmoud Hachich Git Page</h1>
+
+                <div class="text-heading text-muted text-lg">By
+
+                    <strong>Mahmoud Hachich</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="bg-faded p-4 my-4">
+
+            <hr class="divider">
+
+            <h2 class="text-center text-lg text-uppercase my-0">Intermediate -
+
+                <strong>Garage Admin</strong>
+
+            </h2>
+
+            <hr class="divider">
+
+
+
+            <h3>Virtual garage</h3>
+
+            <p>Create Car</p>
+
+            create yk10ykm Peugeot 2001 4</br>
+
+            checkin yk10ykm </br>
+
+            display garage </br>
+
+            checkout yk10ykm </br>
+
+            <script>
+                var garage = [];
+
+                var cars = [];
+
+
+
+                function commandStuff(cmdStuff) {
+
+                    let cmd = cmdStuff;
+
+                    let newCmd = cmd.split(" ");
+
+
+
+                    if (newCmd[0] == "create") {
+
+                        createCar(newCmd[1], newCmd[2], newCmd[3], newCmd[4])
+
+                    }
+
+                    else if (newCmd[0] == "checkin") {
+
+                        addCar(newCmd[1]);
+
+                    }
+
+                    else if (newCmd[0] == "checkout") {
+
+                        checkOutCar(newCmd[1]);
+
+                    }
+
+                    else if (newCmd[0] == "display") {
+
+                        displayCars();
+
+                    }
+
+                }
+
+
+
+                function createCar(reg, make, year, fault) {
+
+                    let checkFaults;
+
+                    if (fault == null) {
+
+                        car = {
+
+                            reg: reg, make: make, year: year, fault: "0"
+
+                        }
+
+                        checkFaults = car.fault;
+
+                    }
+
+                    else {
+
+                        car = {
+
+                            reg: reg, make: make, year: year, fault: fault
+
+                        }
+
+                        checkFaults = car.fault;
+
+                    }
+
+                    alert("The car " + car.reg + " car has been created with " + checkFaults + " faults");
+
+                }
+
+
+
+
+
+                function addCar(reg) {
+
+                    garage.push(car);
+
+                    alert("The car " + car.reg + "has been added!");
+
+                }
+
+
+
+                function checkOutCar(removeCar) {
+
+                    garage.forEach(function (remove, index) {
+
+                        if (remove.reg === removeCar) {
+
+                            garage.splice(index, 1);
+
+
+                            alert(remove.reg + " has been removed");
+
+                        }
+
+                    }
+
+                    )
+
+                }
+
+
+
+
+
+                function displayCars() {
+
+
+
+                    var divElem = document.getElementById("Cars");
+
+                    divElem.innerHTML = "";
+
+                    garage.forEach(function (call) {
+
+                        // var divElem = document.getElementById("Cars");
+
+                        var p = document.createElement("p");
+
+                        p.appendChild(document.createTextNode("Registration: " + call.reg + " " + "Car Make: " + call.make + " " + "Year: " + call.year + " " + "Number of fautls: " + call.fault));
+
+                        divElem.appendChild(p);
+
+                    });
+
+                }
+
+
+
+
+
+// function calculateTotal(billedCar) {
+
+// let total = 0;
+
+// for (let i = 0; i < cars.length; i++) {
+
+// if (cars[i].reg == billedCar) {
+
+
+
+// total = cars[i].fault * 100;
+
+// console.log(total);
+
+// }
+
+
+
+// }
+
+// var Cost = document.getElementById("Cost");
+
+// var p = document.createElement("p");
+
+// p.appendChild(document.createTextNode("The total amount to repair this vehicle is £" + total));
+
+// Cost.appendChild(p);
+
+
+
+// }
+
+            </script>
+
+
+
+
+
+            <form>
+
+                <!-- <input type="text" name="reg" id="reg" placeholder="Registration"><br><br>
+
+<input type="text" name="make" id="make" placeholder="Vehicle Make"><br><br>
+
+<input type="text" name="year" id="year" placeholder="Vehicle Year"><br><br> -->
+
+                <input type="text" name="cmdStuff" id="cmdStuff" placeholder="Enter Command here"><br><br>
+
+            </form>
+
+            <button onClick="commandStuff(cmdStuff.value)" type="submit " value="Submit ">Submit command</button> </br>
+
+            </br>
+
+
+
+            <!-- <p> Add Cars to Garage </p>
+
+<form>
+
+<input type="text" name="addCars" id="addCars" placeholder="Registration"><br><br>
+
+</form>
+
+<button onClick="addCar(getElementById('addCars').value)" type="submit " value="Submit ">Check Car In</button> </br>
+
+</br> -->
+
+
+
+            <!-- <p> Check out </p>
+
+<p> Enter car registration below that you would like to remove </p>
+
+<form>
+
+<input type="text" name="removeCar" id="removeCar" placeholder="Registration"><br><br>
+
+</form>
+
+<button onClick="checkOutCar(getElementById('removeCar').value)" type="submit " value="Submit ">Check out</button> </br>
+
+</br> -->
+
+
+
+            <p> Display Cars </p>
+
+            <p id="Cars"> </p>
+
+            <p> Calculate Cost of Faults </p>
+
+            <p id="Cost"> </p>
+
+            </br> -->
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+    <!-- /.container -->
+
+
+
+    <footer class="bg-faded text-center py-5 ">
+
+        <div class="container ">
+
+            <p class="m-0 ">Copyright &copy; Your Website 2017</p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- Bootstrap core JavaScript -->
+
+    <script src="vendor/jquery/jquery.min.js "></script>
+
+    <script src="vendor/popper/popper.min.js "></script>
+
+    <script src="vendor/bootstrap/js/bootstrap.min.js "></script>
+
+
+
+</body>
+
+
+
+</html>
