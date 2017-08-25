@@ -52,6 +52,9 @@
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="contact.html">Advanced</a>
           </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="Hangman.html">Hangman</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -108,23 +111,23 @@
       <h3> Functions two </h3>
       <p>Create a function that accepets 3 numbers and returns the sum (in this case its 1,2,3)</p>
       <script>
-           function addFunction(num1, num2, num3) {
-             return num1 + num2 + num3
-           }
+        function addFunction(num1, num2, num3) {
+          return num1 + num2 + num3
+        }
 
-           document.write(addFunction(1, 2, 3));
+        document.write(addFunction(1, 2, 3));
       </script>
       </br>
       </br>
       <h3> Variable two </h3>
       <p>Create a Person object with three attributes. name, age and occupation.</p>
       <script>
-              var Person = {
-                name: "Mahmoud Hachich",
-                age: 22,
-                occupation: "QA"
-              };
-              document.write(Person.name, " ", Person.age, " ", Person.occupation);
+           var Person = {
+             name: "Mahmoud Hachich",
+             age: 22,
+             occupation: "QA"
+           };
+           document.write(Person.name, " ", Person.age, " ", Person.occupation);
       </script>
       </br>
       </br>
@@ -132,10 +135,10 @@
       <p>Create a HTML buttom that calls a function when clicked</p>
       <button onClick="myFunction()">Increase my age</button>
       <script>
-                  function myFunction() {
-                    Person.age++;
-                    alert(Person.age);
-                  }
+              function myFunction() {
+                Person.age++;
+                alert(Person.age);
+              }
       </script>
 
       </br>
@@ -191,14 +194,14 @@
       <p>Create and array with 2, add one, remove one </p>
 
       <script>
-                  var strr = ["Mahmoud", " James", " Marcus"];
-                  document.write(strr);
-                  document.write("</br>");
-                  strr.push("Karim");
-                  document.write(strr);
-                  document.write("</br>");
-                  strr.splice(3);
-                  document.write(strr);
+        var strr = ["Mahmoud", " James", " Marcus"];
+        document.write(strr);
+        document.write("</br>");
+        strr.push("Karim");
+        document.write(strr);
+        document.write("</br>");
+        strr.splice(3);
+        document.write(strr);
       </script>
 
 
@@ -221,15 +224,15 @@
       </form>
 
       <script>
-                function checkAge(name, age, occupation) {
-                  var Person = { Name: name, Age: age, Occupation: occupation }
+                  function checkAge(name, age, occupation) {
+                    var Person = { Name: name, Age: age, Occupation: occupation }
 
-                  if ((Person.Age > 20) && (Person.Age < 40)) {
-                    alert("True");
+                    if ((Person.Age > 20) && (Person.Age < 40)) {
+                      alert("True");
+                    }
+                    else
+                      alert("False");
                   }
-                  else
-                    alert("False");
-                }
       </script>
       </br>
       </br>

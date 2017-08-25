@@ -48,17 +48,21 @@
 
             let b = document.getElementById("userInput").value;
             console.log(b);
-            for (let i = 0; i < chosenWord.length; i++) {
-                if (b === chosenWord[i]) {
-                    dash = setCharAt(dash, i, b)
-                    console.log(dash);
 
-                }
-                else {
+            while (turns != 7) {
+                turns++;
 
+                for (let i = 0; i < chosenWord.length; i++) {
+                    if (b === chosenWord[i]) {
+                        dash = setCharAt(dash, i, b)
+                        console.log(dash);
+
+                    }
                 }
 
             }
+            console.log()
+
         }
         function setCharAt(str, index, chr) {
             if (index > str.length - 1) return str;
