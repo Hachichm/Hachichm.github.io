@@ -49,7 +49,7 @@ function guessWord(userInput) {
     for (let i = 0; i < chosenWord.length; i++) {
         if (b === chosenWord[i]) {
             dash = setCharAt(dash, i, b)
-            console.log(dash);
+            document.getElementById("word").innerHTML = (dash);
             match++;
         }
     }
