@@ -1,5 +1,3 @@
-
-
 let easyWordList = ["bark", "john", "hello", "walk"];
 let mediumWordList = ["pizza", "humans", "bicycle", "mayfair"];
 let hardWordList = ["bandwagon", "hyphen", "jawbreaker", "jigsaw"];
